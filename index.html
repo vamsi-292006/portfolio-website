@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vamsi Krishna Pedda | Developer & ML Enthusiast</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        accent: '#10b981', // Emerald green
+                        darkBg: '#0f172a',
+                        cardDark: 'rgba(30, 41, 59, 0.7)',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-darkBg dark:text-gray-100 transition-colors duration-500 overflow-x-hidden selection:bg-accent selection:text-white">
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <div class="progress-bar fixed top-0 left-0 h-1 bg-accent z-50 transition-all duration-100 ease-out"></div>
+
+    <header class="fixed w-full top-0 z-40 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-heading font-bold text-accent tracking-tighter hover-magnetic">
+                VKP<span class="text-gray-900 dark:text-white">.</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 font-medium">
+                <a href="#about" class="nav-link hover:text-accent transition-colors">About</a>
+                <a href="#skills" class="nav-link hover:text-accent transition-colors">Skills</a>
+                <a href="#projects" class="nav-link hover:text-accent transition-colors">Projects</a>
+                <a href="#education" class="nav-link hover:text-accent transition-colors">Experience & Profiles</a>
+                <a href="#contact" class="nav-link hover:text-accent transition-colors">Contact</a>
+                
+                <div class="flex items-center gap-4 border-l border-gray-300 dark:border-gray-700 pl-4">
+                    <button id="theme-toggle" class="hover-magnetic w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center transition-colors">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+                    </button>
+                    <a href="#contact" class="px-5 py-2 bg-accent text-white rounded-full hover:bg-emerald-600 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-accent/30 font-heading">Say Hello</a>
+                </div>
+            </nav>
+
+            <button class="md:hidden text-2xl" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-darkBg/95 backdrop-blur-xl z-50 flex flex-col items-center justify-center gap-8 transform translate-x-full transition-transform duration-500">
+        <button id="close-menu-btn" class="absolute top-6 right-6 text-3xl text-gray-400 hover:text-white"><i class="fas fa-times"></i></button>
+        <a href="#about" class="text-2xl font-heading font-bold hover:text-accent mobile-link">About</a>
+        <a href="#skills" class="text-2xl font-heading font-bold hover:text-accent mobile-link">Skills</a>
+        <a href="#projects" class="text-2xl font-heading font-bold hover:text-accent mobile-link">Projects</a>
+        <a href="#education" class="text-2xl font-heading font-bold hover:text-accent mobile-link">Experience</a>
+        <a href="#contact" class="text-2xl font-heading font-bold hover:text-accent mobile-link">Contact</a>
+    </div>
+
+    <section id="hero" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div id="particles-js" class="absolute inset-0 opacity-40"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10 w-full">
+            <div class="hero-content">
+                <p class="text-accent font-medium tracking-wide mb-2 inline-block px-3 py-1 rounded-full bg-accent/10 border border-accent/20">B.Tech Student (ICE)</p>
+                <h1 class="text-5xl md:text-7xl font-heading font-bold leading-tight mb-4">
+                    Hi, I'm <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-emerald-300">Vamsi Krishna Pedda</span>
+                </h1>
+                <h2 class="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 font-heading mb-6 h-10">
+                    <span id="typewriter"></span><span class="animate-pulse">|</span>
+                </h2>
+                <p class="text-gray-600 dark:text-gray-400 text-lg mb-8 max-w-lg leading-relaxed">
+                    I love turning coffee into clean code and solving tricky algorithmic puzzles. When I'm not studying at NIT Jalandhar, you'll probably find me building machine learning models or competing in hackathons.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#projects" class="px-8 py-3 bg-accent text-white rounded-full font-medium hover:bg-emerald-600 transition-all hover:shadow-lg hover:shadow-accent/30 hover:-translate-y-1">View My Work</a>
+                    <a href="https://takeuforward.org/profile/vamsi_29" target="_blank" class="px-8 py-3 bg-transparent border border-gray-300 dark:border-gray-600 rounded-full font-medium hover:border-accent hover:text-accent transition-all hover:-translate-y-1">My TUF+ Profile</a>
+                </div>
+            </div>
+            
+            <div class="hero-image flex justify-center relative">
+                <div class="absolute inset-0 bg-accent/20 blur-[100px] rounded-full animate-pulse"></div>
+                <div class="relative w-72 h-72 md:w-96 md:h-96 rounded-full p-2 bg-gradient-to-tr from-accent to-emerald-900 shadow-2xl shadow-accent/20 profile-wrapper">
+                    <img src="profile-pic.jpg" alt="Vamsi Krishna Pedda" class="w-full h-full object-cover rounded-full border-4 border-darkBg transform hover:scale-105 transition-transform duration-500">
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-gray-400 hover:text-accent transition-colors">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 relative z-10 bg-white dark:bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 section-header">
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4">A Little About <span class="text-accent">Me</span></h2>
+                <div class="w-20 h-1 bg-accent mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="glass-card p-8 rounded-2xl reveal-up">
+                    <h3 class="text-2xl font-heading font-bold mb-4 flex items-center gap-3">
+                        <i class="fas fa-user text-accent"></i> My Journey
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                        Hi, I'm Vamsi! I'm currently pursuing my B.Tech in <strong>Instrumentation and Control Engineering (ICE)</strong> at <strong>NIT Jalandhar</strong>. While my coursework keeps me busy (proudly maintaining a 9.25 CGPA!), my real passion lies in the fascinating world of Data Structures, Algorithms, and Artificial Intelligence.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Outside the classroom, I'm a huge competitive programming nerd and a regular at hackathons. I love the rush of building something from scratch under a tight deadline. For me, coding isn't just about passing test cases; it's about figuring out how to build solutions that actually make sense.
+                    </p>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl reveal-up" style="transition-delay: 0.2s;">
+                    <h3 class="text-2xl font-heading font-bold mb-6 flex items-center gap-3">
+                        <i class="fas fa-briefcase text-accent"></i> Education & Experience
+                    </h3>
+                    <div class="relative border-l-2 border-accent/30 pl-6 pb-6">
+                        <div class="absolute w-4 h-4 bg-accent rounded-full -left-[9px] top-1 shadow-[0_0_10px_#10b981]"></div>
+                        <h4 class="text-xl font-bold">B.Tech in ICE</h4>
+                        <p class="text-accent text-sm font-medium mb-2">DR B R Ambedkar NIT Jalandhar (2025-2029) | CGPA: 9.25</p>
+                    </div>
+                    <div class="relative border-l-2 border-accent/30 pl-6">
+                        <div class="absolute w-4 h-4 bg-accent rounded-full -left-[9px] top-1 shadow-[0_0_10px_#10b981]"></div>
+                        <h4 class="text-xl font-bold">Operations Member</h4>
+                        <p class="text-accent text-sm font-medium mb-2">Super Quant Coders (SQC) (Jan 2026 - Current)</p>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Helping keep things running smoothly behind the scenes. I coordinate events, manage day-to-day operations, and work with an awesome team to bring our club's initiatives to life.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 section-header">
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4">My <span class="text-accent">Toolkit</span></h2>
+                <div class="w-20 h-1 bg-accent mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-2xl reveal-up" data-tilt data-tilt-max="5">
+                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center text-accent text-2xl mb-6">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-6 border-b border-gray-200 dark:border-gray-700 pb-2">Programming & Logic</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-pill">C++</span>
+                        <span class="skill-pill">Python</span>
+                        <span class="skill-pill">Java</span>
+                        <span class="skill-pill">C</span>
+                        <span class="skill-pill">Data Structures</span>
+                        <span class="skill-pill">Algorithms</span>
+                        <span class="skill-pill">Competitive Programming</span>
+                    </div>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl reveal-up" data-tilt data-tilt-max="5" style="transition-delay: 0.1s;">
+                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center text-accent text-2xl mb-6">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-6 border-b border-gray-200 dark:border-gray-700 pb-2">AI, ML & Data</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-pill">TensorFlow</span>
+                        <span class="skill-pill">Keras</span>
+                        <span class="skill-pill">Scikit-learn</span>
+                        <span class="skill-pill">Pandas</span>
+                        <span class="skill-pill">NumPy</span>
+                        <span class="skill-pill">NLP</span>
+                        <span class="skill-pill">Computer Vision</span>
+                        <span class="skill-pill">Gen AI</span>
+                        <span class="skill-pill">Prompt Engineering</span>
+                    </div>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl reveal-up" data-tilt data-tilt-max="5" style="transition-delay: 0.2s;">
+                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center text-accent text-2xl mb-6">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-6 border-b border-gray-200 dark:border-gray-700 pb-2">Web & Cloud</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-pill">React.js</span>
+                        <span class="skill-pill">Node.js</span>
+                        <span class="skill-pill">Express</span>
+                        <span class="skill-pill">Tailwind CSS</span>
+                        <span class="skill-pill">MongoDB</span>
+                        <span class="skill-pill">MySQL</span>
+                        <span class="skill-pill">GCP</span>
+                        <span class="skill-pill">Git/GitHub</span>
+                        <span class="skill-pill">Streamlit</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 bg-white dark:bg-slate-900/50 relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 section-header">
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4">Things I've <span class="text-accent">Built</span></h2>
+                <div class="w-20 h-1 bg-accent mx-auto rounded-full mb-6"></div>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">A collection of machine learning models I've built to get my hands dirty with data. They might be foundational, but they taught me a lot!</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <div class="project-card group reveal-up" data-tilt data-tilt-max="10" data-tilt-glare data-tilt-max-glare="0.3">
+                    <div class="p-6 h-full flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500 text-xl">
+                                    <i class="fas fa-ship"></i>
+                                </div>
+                                <a href="https://github.com/vamsi-292006" target="_blank" class="text-gray-400 hover:text-accent transition-colors"><i class="fab fa-github text-2xl"></i></a>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3 group-hover:text-blue-500 transition-colors">Titanic Survival Prediction</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed">
+                                A classic rite of passage in Data Science! I built a classification model using Logistic Regression and Random Forest to predict passenger survival rates based on the Titanic dataset.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                            <span class="text-xs font-mono text-blue-500 bg-blue-500/10 px-2 py-1 rounded">Python</span>
+                            <span class="text-xs font-mono text-blue-500 bg-blue-500/10 px-2 py-1 rounded">Pandas</span>
+                            <span class="text-xs font-mono text-blue-500 bg-blue-500/10 px-2 py-1 rounded">Scikit-Learn</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card group reveal-up" data-tilt data-tilt-max="10" data-tilt-glare data-tilt-max-glare="0.3" style="transition-delay: 0.1s;">
+                    <div class="p-6 h-full flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-500 text-xl">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <a href="https://github.com/vamsi-292006" target="_blank" class="text-gray-400 hover:text-accent transition-colors"><i class="fab fa-github text-2xl"></i></a>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3 group-hover:text-purple-500 transition-colors">House Price Estimator</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed">
+                                A practical look into Linear Regression. I trained this model to predict housing prices by analyzing features like square footage, room counts, and neighborhood location data.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                            <span class="text-xs font-mono text-purple-500 bg-purple-500/10 px-2 py-1 rounded">NumPy</span>
+                            <span class="text-xs font-mono text-purple-500 bg-purple-500/10 px-2 py-1 rounded">Scikit-Learn</span>
+                            <span class="text-xs font-mono text-purple-500 bg-purple-500/10 px-2 py-1 rounded">Matplotlib</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card group reveal-up" data-tilt data-tilt-max="10" data-tilt-glare data-tilt-max-glare="0.3" style="transition-delay: 0.2s;">
+                    <div class="p-6 h-full flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="w-12 h-12 rounded-full bg-pink-500/20 flex items-center justify-center text-pink-500 text-xl">
+                                    <i class="fas fa-seedling"></i>
+                                </div>
+                                <a href="https://github.com/vamsi-292006" target="_blank" class="text-gray-400 hover:text-accent transition-colors"><i class="fab fa-github text-2xl"></i></a>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3 group-hover:text-pink-500 transition-colors">Iris Classification</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed">
+                                Diving into Support Vector Machines (SVM). This project allowed me to accurately classify different iris flower species strictly based on their petal and sepal measurements.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                            <span class="text-xs font-mono text-pink-500 bg-pink-500/10 px-2 py-1 rounded">Python</span>
+                            <span class="text-xs font-mono text-pink-500 bg-pink-500/10 px-2 py-1 rounded">SVM</span>
+                            <span class="text-xs font-mono text-pink-500 bg-pink-500/10 px-2 py-1 rounded">Data Viz</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 section-header">
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4">Hackathons & <span class="text-accent">Profiles</span></h2>
+                <div class="w-20 h-1 bg-accent mx-auto rounded-full mb-6"></div>
+            </div>
+
+            <div class="glass-card p-6 md:p-10 rounded-2xl mb-12 text-center border border-accent/30 reveal-up">
+                <i class="fas fa-laptop-code text-4xl text-accent mb-4 animate-bounce"></i>
+                <h3 class="text-2xl font-bold mb-2">Hackathon Addict</h3>
+                <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">I honestly thrive in the chaos of hackathons. It's where I get to team up with smart people, code for hours straight, and turn wild ideas into working AI/ML prototypes before the clock runs out.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                <a href="https://takeuforward.org/profile/vamsi_29" target="_blank" class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center gap-3 hover:-translate-y-2 transition-transform hover:border-accent group reveal-up">
+                    <i class="fas fa-code text-4xl text-gray-400 group-hover:text-accent transition-colors"></i>
+                    <span class="font-bold">TUF+</span>
+                </a>
+                <a href="https://github.com/vamsi-292006" target="_blank" class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center gap-3 hover:-translate-y-2 transition-transform hover:border-white group reveal-up" style="transition-delay: 0.1s;">
+                    <i class="fab fa-github text-4xl text-gray-400 group-hover:text-black dark:group-hover:text-white transition-colors"></i>
+                    <span class="font-bold">GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/vamsi-krishna-pedda-08a573348" target="_blank" class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center gap-3 hover:-translate-y-2 transition-transform hover:border-blue-500 group reveal-up" style="transition-delay: 0.2s;">
+                    <i class="fab fa-linkedin text-4xl text-gray-400 group-hover:text-blue-500 transition-colors"></i>
+                    <span class="font-bold">LinkedIn</span>
+                </a>
+                <a href="#" target="_blank" class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center gap-3 hover:-translate-y-2 transition-transform hover:border-yellow-600 group reveal-up" style="transition-delay: 0.3s;">
+                    <i class="fas fa-code-branch text-4xl text-gray-400 group-hover:text-yellow-600 transition-colors"></i>
+                    <span class="font-bold">LeetCode</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-white dark:bg-slate-900/50 relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16">
+                <div class="reveal-up">
+                    <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">Let's <span class="text-accent">Connect</span></h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed text-lg">
+                        Whether you have a cool project idea, a job opportunity, or just want to chat about code and machine learning, I'd love to hear from you. Drop me a message!
+                    </p>
+                    <div class="flex flex-col gap-6">
+                        <div class="flex items-center gap-4 hover-magnetic w-max">
+                            <div class="w-12 h-12 bg-accent/10 text-accent rounded-full flex items-center justify-center text-xl">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Email Me</p>
+                                <a href="mailto:vamsipedda55@gmail.com" class="font-medium hover:text-accent transition-colors">vamsipedda55@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 hover-magnetic w-max">
+                            <div class="w-12 h-12 bg-accent/10 text-accent rounded-full flex items-center justify-center text-xl">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Call Me</p>
+                                <a href="tel:+919441681155" class="font-medium hover:text-accent transition-colors">+91-9441681155</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 hover-magnetic w-max">
+                            <div class="w-12 h-12 bg-accent/10 text-accent rounded-full flex items-center justify-center text-xl">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Location</p>
+                                <p class="font-medium">NIT Jalandhar, Punjab India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl reveal-up" style="transition-delay: 0.2s;">
+                    <form id="contact-form" class="flex flex-col gap-6">
+                        <div class="relative">
+                            <input type="text" id="name" name="name" required class="w-full bg-transparent border-b-2 border-gray-300 dark:border-gray-700 py-3 px-2 text-gray-900 dark:text-white focus:outline-none focus:border-accent transition-colors peer placeholder-transparent" placeholder="Name">
+                            <label for="name" class="absolute left-2 -top-3.5 text-sm text-accent transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-accent cursor-text">What's your name?</label>
+                        </div>
+                        <div class="relative">
+                            <input type="email" id="email" name="email" required class="w-full bg-transparent border-b-2 border-gray-300 dark:border-gray-700 py-3 px-2 text-gray-900 dark:text-white focus:outline-none focus:border-accent transition-colors peer placeholder-transparent" placeholder="Email">
+                            <label for="email" class="absolute left-2 -top-3.5 text-sm text-accent transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-accent cursor-text">Your email address</label>
+                        </div>
+                        <div class="relative mt-4">
+                            <textarea id="message" name="message" rows="4" required class="w-full bg-transparent border-b-2 border-gray-300 dark:border-gray-700 py-3 px-2 text-gray-900 dark:text-white focus:outline-none focus:border-accent transition-colors peer placeholder-transparent resize-none" placeholder="Message"></textarea>
+                            <label for="message" class="absolute left-2 -top-3.5 text-sm text-accent transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-accent cursor-text">How can I help you?</label>
+                        </div>
+                        <button type="submit" class="mt-4 px-8 py-4 bg-accent text-white font-bold rounded-xl hover:bg-emerald-600 transition-all hover:shadow-lg hover:shadow-accent/30 hover:-translate-y-1 w-full flex items-center justify-center gap-2">
+                            Send Message <i class="fas fa-paper-plane"></i>
+                        </button>
+                        <p id="form-status" class="text-center font-medium mt-2 hidden"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 border-t border-gray-200 dark:border-gray-800 relative z-10 text-center">
+        <p class="text-gray-600 dark:text-gray-400">
+            © 2026 Vamsi Krishna Pedda. Built with lots of coffee and <i class="fas fa-heart text-accent mx-1"></i>.
+        </p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
